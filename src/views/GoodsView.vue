@@ -18,7 +18,7 @@
       <div class="products goods-js">
         <article
           class="card goods"
-          v-for="goods in goodsArr"
+          v-for="goods in store.goods"
           :key="goods.id"
         >
           <img class="card__img" :src="getUrl(goods.image)" alt="foto">
@@ -42,6 +42,6 @@
 </template>
 
 <script setup>
-  import { goodsArr } from '../constants/const.js';
+  import { store } from '@/store/index.js';
   const getUrl = (name) => new URL(`../assets/img/${name}`, import.meta.url);
 </script>

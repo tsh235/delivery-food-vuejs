@@ -20,7 +20,7 @@
       <div class="products">
         <router-link
           class="card"
-          v-for="rest in restsArr"
+          v-for="rest in store.rests"
           :key="rest.id"
           :to="`/rest?id=${rest.id}`"
         >
@@ -48,6 +48,6 @@
 </template>
 
 <script setup>
-  import { restsArr } from '../constants/const.js';
+  import { store } from '@/store/index.js';
   const getUrl = (name) => new URL(`../assets/img/${name}`, import.meta.url);
 </script>
